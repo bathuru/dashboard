@@ -1,3 +1,3 @@
 # spring-mvc-hello-world
 
-http://localhost:8090/springmvc-helloworld/
+http://localhost:8080/springmvc-helloworld/
