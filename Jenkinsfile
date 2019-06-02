@@ -8,7 +8,20 @@ node{
      def mvnCMD = "${mvnHome}/bin/mvn"
      sh "${mvnCMD} clean package"
    }
+
+   stage('Copy to Nexux Repository'){
+   nexusPublisher nexusInstanceId: 'NexusRepoServer', 
+                  nexusRepositoryId: 'DevopsNexusRepo', 
+                  packages: [[$class: 'MavenPackage', 
+                  mavenAssetList: [[classifier: '', 
+                       extension: '', 
+                  filePath: '/Users/srinivas/.jenkins/workspace/SpringHelloWorld/target/springmhelloworld-1.0.war']], 
+                  mavenCoordinate: [artifactId: 'springhelloworld', 
+                  groupId: 'com.itsmydevops', 
+                  packaging: 'war', 
+                  version: '1.0']]]
    
+   } 
   stage('Build Docker Image'){
      sh 'docker build -t bathurudocker/springapp:3.0.0 .'
    }
