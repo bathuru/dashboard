@@ -1,6 +1,6 @@
 node{
    stage('GitHub Checkout'){
-       git credentialsId: 'GitHubCredentials', url: 'https://github.com/itsmydevops/spring-mvc-hello-world.git'
+       git credentialsId: 'GitHubCredentials', url: 'https://github.com/itsmydevops/SpringHelloWorld.git'
    }
    
    stage('Maven Package'){
