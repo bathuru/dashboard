@@ -9,7 +9,7 @@ pipeline{
 
     stage('Build'){
       steps{
-        echo "Build"
+        input(Do you want to proceed ?)
         }
     }    
     
