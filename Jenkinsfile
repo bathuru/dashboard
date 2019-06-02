@@ -1,6 +1,7 @@
 node{
    stage('GitHub Checkout'){
-       git credentialsId: 'GitHubCredentials', url: 'https://github.com/itsmydevops/SpringHelloWorld.git'
+       git credentialsId: 'GitHubCredentials', 
+                     url: 'https://github.com/itsmydevops/SpringHelloWorld.git'
    }
    
    stage('Maven Package'){
@@ -10,16 +11,16 @@ node{
    }
 
    stage('Copy to Nexux Repository'){
-   nexusPublisher nexusInstanceId: 'NexusRepoServer', 
+   nexusPublisher   nexusInstanceId: 'NexusRepoServer', 
                   nexusRepositoryId: 'DevopsNexusRepo', 
-                  packages: [[$class: 'MavenPackage', 
-                  mavenAssetList: [[classifier: '', 
-                       extension: '', 
-                  filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/springhelloworld-1.0.war']], 
-                  mavenCoordinate: [artifactId: 'springhelloworld', 
-                  groupId: 'com.itsmydevops', 
-                  packaging: 'war', 
-                  version: '1.0']]]
+                           packages: [[$class: 'MavenPackage', 
+                     mavenAssetList: [[classifier: '', 
+                          extension: '', 
+                           filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/springhelloworld-1.0.war']], 
+                    mavenCoordinate: [artifactId: 'springhelloworld', 
+                            groupId: 'com.itsmydevops', 
+                          packaging: 'war', 
+                            version: '1.0']]]
    
    } 
   stage('Build Docker Image'){
