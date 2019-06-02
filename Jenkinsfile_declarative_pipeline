@@ -13,24 +13,22 @@ pipeline{
         }
     }    
     
-    stage('Unit Testing'){
-      steps{
-        echo "Unit Testing"
-        }
-    }  
+  stage('Test'){
+
  parallel{   
-    stage('Static Code Analysis'){
+    stage('Unit Test'){
       steps{
         echo "Static Code Analysis"
         }
     }
         
-    stage('Delivery'){
+    stage('Integration Test'){
       steps{
         echo "Delivery"
         }
-    }  
     }
     
+    }
+    }
   }
 }
