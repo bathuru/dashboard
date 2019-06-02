@@ -2,27 +2,39 @@ pipeline{
  agenet any
   stages{  
     stage('Checkout'){
+       steps{
         echo "Checkout"
+        }
     }
 
     stage('Build'){
+      steps{
         echo "Build"
+        }
     }    
     
     stage('Unit Testing'){
+      steps{
         echo "Unit Testing"
+        }
     }  
     
     stage('Static Code Analysis'){
+      steps{
         echo "Static Code Analysis"
+        }
     }
     
     stage('Static Code Analysis'){
+      steps{
         echo "Static Code Analysis"
+        }
     }  
     
     stage('Delivery'){
+      steps{
         echo "Delivery"
+        }
     }  
     }
 }
