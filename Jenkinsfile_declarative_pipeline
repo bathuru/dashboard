@@ -1,5 +1,5 @@
 pipeline{
- agenet any
+ agent any
   stages{  
     stage('Checkout'){
        steps{
@@ -24,13 +24,7 @@ pipeline{
         echo "Static Code Analysis"
         }
     }
-    
-    stage('Static Code Analysis'){
-      steps{
-        echo "Static Code Analysis"
-        }
-    }  
-    
+        
     stage('Delivery'){
       steps{
         echo "Delivery"
