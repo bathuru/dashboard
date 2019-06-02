@@ -23,18 +23,18 @@ node{
    
    } 
   stage('Build Docker Image'){
-     sh 'docker build -t bathurudocker/springapp:3.0.0 .'
+     sh 'docker build -t bathurudocker/springapp:4.0.0 .'
    }
    
   stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/springapp:3.0.0'
+     sh 'docker push bathurudocker/springapp:4.0.0'
    }
   
      stage('Run Container on Dev Server'){
-     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:3.0.0'
+     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:4.0.0'
    }
    
 }
