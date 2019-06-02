@@ -15,7 +15,7 @@ node{
                   packages: [[$class: 'MavenPackage', 
                   mavenAssetList: [[classifier: '', 
                        extension: '', 
-                  filePath: '/Users/srinivas/.jenkins/workspace/SpringHelloWorld/target/springhelloworld-1.0.war']], 
+                  filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/springhelloworld-1.0.war']], 
                   mavenCoordinate: [artifactId: 'springhelloworld', 
                   groupId: 'com.itsmydevops', 
                   packaging: 'war', 
