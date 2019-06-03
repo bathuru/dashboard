@@ -24,18 +24,22 @@ node{
    
    } 
   stage('Build Docker Image'){
-     sh 'docker build -t bathurudocker/springapp:5.0.0 .'
+     sh 'docker build -t bathurudocker/springapp:6.0.0 .'
    }
    
   stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/springapp:5.0.0'
+     sh 'docker push bathurudocker/springapp:6.0.0'
    }
   
    stage('Run Container on Dev Server'){
-     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:5.0.0'
+      try{
+         sh 'docker rm -f springapp'
+      catch(error){
+         }
+     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:6.0.0'
    }
    
     stage('Email Notification'){
