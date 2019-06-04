@@ -44,7 +44,7 @@ node{
    stage('Run Container on Dev Server'){
       try{
          sh 'docker rm -f springapp'
-      catch(error){
+      }catch(error){
          echo ERROR
          }
      sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:6.0.0'
