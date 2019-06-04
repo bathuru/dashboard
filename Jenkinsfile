@@ -10,6 +10,13 @@ node{
      sh "${mvnCMD} clean package"
    }
 
+   stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'Maven', type: 'maven'
+        withSonarQubeEnv('SonarQubeServer') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    }
+   
    stage('Copy to Nexux Repository'){
    nexusPublisher   nexusInstanceId: 'NexusRepoServer', 
                   nexusRepositoryId: 'DevopsNexusRepo', 
