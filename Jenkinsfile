@@ -32,7 +32,8 @@ node{
    } 
     stage('Remove Previous Container'){
 	try{
-		sh 'docker rm -f springapp'
+            sh 'docker rm -f springapp'
+	    sh 'docker rmi bathurudocker/springapp'
 	}catch(error){
 		//  do nothing if there is an exception
 	}
