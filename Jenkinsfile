@@ -31,29 +31,29 @@ node{
    
    } 
   stage('Build Docker Image'){
-     sh 'docker build -t bathurudocker/springapp:7.0.0 .'
+     sh 'docker build -t bathurudocker/springapp:8.0.0 .'
    }
    
   stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/springapp:7.0.0'
+     sh 'docker push bathurudocker/springapp:8.0.0'
    }
   
    stage('Run Container on Dev Server'){
-     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:7.0.0'
+     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:8.0.0'
    }
    
     stage('Email Notification'){
       mail  bcc: '', 
            body: '''Hi Welcome to jenkins email alerts
-                 Thanks
-                 Srini''', 
+            Thanks
+            Admin''', 
              cc: '', 
            from: '', 
         replyTo: '', 
-        subject: 'Jenkins Job', 
+        subject: 'Jenkins Job Status', 
              to: 'srinivas.bathuru@gmail.com'
    }
 }
