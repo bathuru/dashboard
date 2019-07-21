@@ -55,9 +55,10 @@ node{
    
     stage('Email Notification'){
       emailext  bcc: '', 
-           body: """Hi Welcome to jenkins email alerts
-	   		  Job URL : ${env.JOB_URL}
-			   Job Name: ${env.JOB_NAME}
+           body: """Hi Team, You build successfully deployed.
+	   
+	   Job URL : ${env.JOB_URL}
+	   Job Name: ${env.JOB_NAME}
 Thanks
 DevOps Team""", 
              cc: '', 
