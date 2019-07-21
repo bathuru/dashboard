@@ -46,7 +46,7 @@ node{
    }
    
     stage('Email Notification'){
-      mail  bcc: '', 
+      emailext  bcc: '', 
            body: '''Hi Welcome to jenkins email alerts
             Thanks
             Admin''', 
@@ -55,5 +55,6 @@ node{
         replyTo: '', 
         subject: 'Jenkins Job Status', 
              to: 'srinivas.bathuru@gmail.com'
+        attachLog: true
    }
 }
