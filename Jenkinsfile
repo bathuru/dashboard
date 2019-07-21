@@ -56,8 +56,10 @@ node{
     stage('Email Notification'){
       emailext  bcc: '', 
            body: '''Hi Welcome to jenkins email alerts
-            Thanks
-            Admin''', 
+	   		  Job URL : ${env.JOB_URL}
+			   Job Name: ${env.JOB_NAME}
+Thanks
+Admin''', 
              cc: '', 
            from: '', 
         replyTo: '', 
