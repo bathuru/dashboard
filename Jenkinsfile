@@ -4,7 +4,7 @@ node{
                      url: 'https://github.com/itsmydevops/SpringHelloWorld.git'
    }
    
-   stage('Maven Package'){
+   stage('Maven Build'){
      def mvnHome = tool name: 'Maven', type: 'maven'
      def mvnCMD = "${mvnHome}/bin/mvn"
      sh "${mvnCMD} clean package"
@@ -17,7 +17,7 @@ node{
         }
     }
    
-   stage('Copy to Nexux Repository'){
+   stage('Copy to Nexux Repo'){
    nexusPublisher   nexusInstanceId: 'NexusRepoServer', 
                   nexusRepositoryId: 'DevopsNexusRepo', 
                            packages: [[$class: 'MavenPackage', 
@@ -49,7 +49,7 @@ node{
      sh 'docker push bathurudocker/springapp:latest'
    }
   
-   stage('Run Container on Dev Server'){
+   stage('Run Container'){
      sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:latest'
    }
    
