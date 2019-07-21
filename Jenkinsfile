@@ -31,6 +31,8 @@ node{
    
    } 
   stage('Build Docker Image'){
+     sh 'docker stop springapp'
+     sh 'docker rm springapp'
      sh 'docker build -t bathurudocker/springapp:8.0.0 .'
    }
    
