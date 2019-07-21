@@ -30,7 +30,7 @@ node{
                             version: '1.0']]]
    
    } 
-  stage('Build Docker Image'){
+  stage('Build Docker Image'){ 
      sh 'docker build -t bathurudocker/springapp:latest .'
    }
    
