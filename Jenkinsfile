@@ -63,6 +63,6 @@ node{
         replyTo: '', 
         subject: 'Jenkins Job Status', 
              to: 'srinivas.bathuru@gmail.com'
-        attachLog: true
+        attachLog: 'true'
    }
 }
