@@ -30,6 +30,13 @@ node{
                             version: '1.0']]]
    
    } 
+    stage('Remove Previous Container'){
+	try{
+		sh 'docker rm -f springapp'
+	}catch(error){
+		//  do nothing if there is an exception
+	}
+ }
   stage('Build Docker Image'){ 
      sh 'docker build -t bathurudocker/springapp:latest .'
    }
