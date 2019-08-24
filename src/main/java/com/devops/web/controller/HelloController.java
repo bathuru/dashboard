@@ -26,7 +26,5 @@ public class HelloController {
 		model.addObject("msg", name);
 
 		return model;
-
 	}
-
 }
