@@ -32,25 +32,25 @@ node{
    } 
     stage('Remove Previous Container'){
 	try{
-            sh 'docker rm -f springapp'
-	    sh 'docker rmi bathurudocker/springapp'
+            sh 'docker rm -f dashboard'
+	    sh 'docker rmi bathurudocker/dashboard'
 	}catch(error){
 		//  do nothing if there is an exception
 	}
  }
   stage('Build Docker Image'){ 
-     sh 'docker build -t bathurudocker/springapp:latest .'
+     sh 'docker build -t bathurudocker/dashboard:latest .'
    }
    
   stage('Push Docker Image'){
      withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerpwd')]) {
         sh "docker login -u bathurudocker -p ${dockerpwd}"
      }
-     sh 'docker push bathurudocker/springapp:latest'
+     sh 'docker push bathurudocker/dashboard:latest'
    }
   
    stage('Run Container'){
-     sh 'docker run -p 8090:8080 -d --name springapp bathurudocker/springapp:latest'
+     sh 'docker run -p 8090:8080 -d --name dashboard bathurudocker/dashboard:latest'
    }
    
     stage('Email Notification'){
