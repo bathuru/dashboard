@@ -23,8 +23,8 @@ node{
                            packages: [[$class: 'MavenPackage', 
                      mavenAssetList: [[classifier: '', 
                           extension: '', 
-                           filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/springhelloworld-1.0.war']], 
-                    mavenCoordinate: [artifactId: 'springhelloworld', 
+                           filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/dashboard-1.0.war']], 
+                    mavenCoordinate: [artifactId: 'dashboard', 
                             groupId: 'com.itsmydevops', 
                           packaging: 'war', 
                             version: '1.0']]]
