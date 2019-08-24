@@ -23,7 +23,7 @@ node{
                            packages: [[$class: 'MavenPackage', 
                      mavenAssetList: [[classifier: '', 
                           extension: '', 
-                           filePath: '/Users/srinivas/.jenkins/workspace/Deploy_Docker/target/dashboard-1.0.war']], 
+                           filePath: '/Users/srinivas/.jenkins/workspace/dashboard/target/dashboard-1.0.war']], 
                     mavenCoordinate: [artifactId: 'dashboard', 
                             groupId: 'com.itsmydevops', 
                           packaging: 'war', 
