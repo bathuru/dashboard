@@ -14,7 +14,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="#">Spring 3 MVC Project</a>
+		<a class="navbar-brand" href="#">DevOps Projects</a>
 	</div>
   </div>
 </nav>
@@ -28,9 +28,10 @@
 		</c:if>
  
 		<c:if test="${empty name}">
-			Welcome Welcome!
+			Welcome Srini!
 		</c:if>
     </p>
+	  </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
     <p>
 		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 	</p>
@@ -39,35 +40,9 @@
  
 <div class="container">
  
-  <div class="row">
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>ABC</p>
-		<p>
-			<a class="btn btn-default" href="#" role="button">View details</a>
-		</p>
-	</div>
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>ABC</p>
-		<p>
-			<a class="btn btn-default" href="#" role="button">View details</a>
-		</p>
-	</div>
-	<div class="col-md-4">
-		<h2>Heading</h2>
-		<p>ABC</p>
-		<p>
-			<a class="btn btn-default" href="#" role="button">View details</a>
-		</p>
-	</div>
-  </div>
- 
- 
   <hr>
   <footer>
 	<p>&copy; ItsmyDevOps </p>
-		<p>&copy; ItsmyDevOps </p>
   </footer>
 </div>
  
