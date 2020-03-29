@@ -6,7 +6,7 @@
 	<artifactId>dashboard</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringmavenHelloWorld</name>
+	<name></name>
 
 	<properties>
 		<jdk.version>1.6</jdk.version>
